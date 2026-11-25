@@ -1,18 +1,18 @@
-"""Aplicación mínima para ilustrar configuración segura por entorno."""
+"""Minimal application demonstrating secure configuration via environment."""
 
 import os
 from config import APP_API_TOKEN
 
 
 def main() -> None:
-    token = os.getenv("APP_API_TOKEN", APP_API_TOKEN)
+    token = APP_API_TOKEN or os.getenv("APP_API_TOKEN")
     if not token:
-        print("APP_API_TOKEN no está configurado.")
+        print("APP_API_TOKEN is not configured.")
         return
 
-    # No imprimir el token ni incluirlo en logs.
-    print("Aplicación de demostración iniciada.")
-    print(f"Token configurado: {'sí' if bool(token) else 'no'}")
+    # Never print the token or include it in logs.
+    print("Demo application started.")
+    print(f"Token configured: {'yes' if bool(token) else 'no'}")
 
 
 if __name__ == "__main__":
