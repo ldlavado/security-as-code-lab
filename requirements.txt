@@ -1,2 +1,2 @@
-# Dependencia antigua intencional para el ejercicio de Trivy.
-urllib3==1.25.3
+# Updated to a currently supported, non-vulnerable version of urllib3.
+urllib3==2.2.3
